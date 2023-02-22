@@ -32,6 +32,11 @@ app.post('/task', (req: Request, res: Response) => {
     res.redirect('/');
 });
 
+app.get('/task/:id/done', (req: Request, res: Response) => {
+    tasks[req.params.id].done = true;
+    res.redirect('/');
+});
+
 app.get('/', (req: Request, res: Response) => {
   res.render('todoList', {tasks});
 });
