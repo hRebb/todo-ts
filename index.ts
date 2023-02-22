@@ -22,7 +22,7 @@ const tasks: Task[] = [
 app.set('view engine', 'ejs');
 
 app.get('/', (req: Request, res: Response) => {
-  res.render('todoList');
+  res.render('todoList', {tasks});
 });
 
 app.listen(port, () => {

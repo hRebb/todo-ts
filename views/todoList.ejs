@@ -16,12 +16,14 @@
         </h3>
 
         <ul>
-            <li>
-                Title | <a href="#">Completed</a>
-            </li>
-            <li>
-                <s>Title</s> | <a href="#">Delete</a>
-            </li>
+            <% tasks.forEach(task => { %>
+                <li>
+                    <%= task.title %> | <a href="#">Completed</a>
+                </li>
+                <li>
+                    <s><%= task.title %></s> | <a href="#">Delete</a>
+                </li>
+            <% }); %>
         </ul>
     </body>
 </html>
