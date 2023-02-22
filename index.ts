@@ -35,7 +35,9 @@ app.post('/task', (req: Request, res: Response) => {
 });
 
 app.get('/task/:id/done', (req: Request, res: Response) => {
-    tasks[req.params.id].done = true;
+    if (tasks[req.params.id]) {
+        tasks[req.params.id].done = true;
+    }
     res.redirect('/');
 });
 
