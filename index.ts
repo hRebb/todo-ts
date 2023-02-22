@@ -25,10 +25,12 @@ app.use(express.urlencoded({extended: false}));
 app.set('view engine', 'ejs');
 
 app.post('/task', (req: Request, res: Response) => {
-    tasks.push({
-        title: req.body.task,
-        done: false
-    });
+    if (req.body.task){
+        tasks.push({
+            title: req.body.task,
+            done: false
+        });
+    }
     res.redirect('/');
 });
 
