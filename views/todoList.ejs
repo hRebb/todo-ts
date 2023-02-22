@@ -7,22 +7,24 @@
         <title>ToDo List with TS, EXPRESS & EJS</title>
     </head>
     <body>
-        <h1>
-            ToDo List
-        </h1>
-         
-        <h3>
-            Tasks
-        </h3>
+        <h1>ToDo List</h1>
+        <h3>Tasks</h3>
 
         <ul>
             <% tasks.forEach(task => { %>
-                <li>
-                    <%= task.title %> | <a href="#">Completed</a>
-                </li>
-                <li>
-                    <s><%= task.title %></s> | <a href="#">Delete</a>
-                </li>
+
+                <% if (task.done) { %>
+                    <li>
+                        <s><%= task.title %></s> 
+                        | <a href="#">Delete</a>
+                    </li>
+                <% } else { %>
+                    <li>
+                        <%= task.title %> 
+                        | <a href="#">Completed</a>
+                    </li>
+                <% } %>
+
             <% }); %>
         </ul>
     </body>
