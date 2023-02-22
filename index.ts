@@ -6,7 +6,7 @@ const port = 3000;
 app.set('view engine', 'ejs');
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Hello World!');
+  res.render('todoList');
 });
 
 app.listen(port, () => {
