@@ -37,6 +37,12 @@ app.get('/task/:id/done', (req: Request, res: Response) => {
     res.redirect('/');
 });
 
+app.get('/task/:id/delete', (req: Request, res: Response) => {
+    const taskId = parseInt(req.params.id);
+    tasks.splice(taskId, 1);
+    res.redirect('/');
+});
+
 app.get('/', (req: Request, res: Response) => {
   res.render('todoList', {tasks});
 });
